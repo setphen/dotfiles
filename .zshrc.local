@@ -1,0 +1,35 @@
+# autoload -U colors && colors
+# setopt PROMPT_SUBST ; PS1='%{$fg[green]%}%n%{$reset_color%}:%c%{$fg[blue]%}$(__git_ps1 " (%s)")%{$reset_color%}\$ '
+
+export PATH="$HOME/.bin:$PATH"
+
+export POSTGRES_USER=setphen
+
+setopt hist_ignore_all_dups inc_append_history
+export HISTFILE=~/.zhistory
+export HISTSIZE=4096
+export SAVEHIST=4096
+
+# recommended by brew doctor
+export PATH="/usr/local/bin:$PATH"
+. /Users/setphen/.asdf/asdf.sh
+#. /Users/setphen/.asdf/completions/asdf.bash
+
+#Open new tabs in current working directory
+precmd () {print -Pn "\e]2; %~/ \a"}
+preexec () {print -Pn "\e]2; %~/ \a"}
+
+#colors :)
+export TERM="xterm-256color" 
+
+# no globbing
+# unsetopt nomatch
+
+# productivity
+alias todo="vim ~/.todo"
+
+# safety
+alias trash="rmtrash"
+
+# get those sweet completions?
+autoload -Uz compinit && compinit
