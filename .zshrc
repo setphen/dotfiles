@@ -1,8 +1,3 @@
-# alias for managing dotfiles
-# https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
-alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias dotwhat='config ls-tree -r HEAD --name-only'
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
