@@ -9,7 +9,8 @@ setopt hist_ignore_all_dups inc_append_history
 export HISTFILE=~/.zhistory
 export HISTSIZE=4096
 export SAVEHIST=4096
-
+# superfast search, thanks ripgrep!
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
 . /Users/setphen/.asdf/asdf.sh
