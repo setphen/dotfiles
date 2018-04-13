@@ -1,0 +1,21 @@
+" keep buffers open in bg
+set hidden
+" modify keybindings
+let mapleader = ","
+" use <C-Space> for Vim's keyword autocomplete
+inoremap <Nul> <C-n>
+map! <C-q> <ESC>
+" easy save
+noremap <Leader>w :update<CR>
+nnoremap <Leader><Leader> <C-^>
+" fuzzy finding
+noremap <C-p> :Files<CR>
+" project-wide search
+noremap <Leader>a :Ack '
+
+" use system clipboard (for yank, etc)
+set clipboard=unnamed
+
+"colorscheme!
+colo lucid
+hi ColorColumn ctermbg=8 

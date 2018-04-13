@@ -1,0 +1,5 @@
+" add'tl plugins
+Plug 'flazz/vim-colorschemes'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
