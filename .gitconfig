@@ -12,6 +12,7 @@
   co = checkout
   pf = push --force-with-lease
   st = status
+  ac = !git add . && git commit
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input

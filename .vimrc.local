@@ -13,9 +13,57 @@ noremap <C-p> :Files<CR>
 " project-wide search
 noremap <Leader>a :Ack '
 
+" toggle fullscreen pane
+nnoremap <C-W>z :call MaximizeToggle()<CR>
+"for another time...
+" function! ToggleQuickFix()
+"   if "Quickfix" in buffers()
+"     :ccl
+"   else
+"     :cope
+"   endif
+" endfunction
+noremap <Leader>p Buf<CR>
+
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
+
+" toggles the quickfix window.
+command -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+  else
+    copen
+  endif
+endfunction
+
+" used to track the quickfix window
+augroup QFixToggle
+  autocmd!
+  autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
+  autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
+augroup END
+
+nnoremap <Leader><space> :QFix<CR>
+
 " use system clipboard (for yank, etc)
 set clipboard=unnamed
 
 "colorscheme!
-colo lucid
-hi ColorColumn ctermbg=8 
+colo minimalist
+hi ColorColumn ctermbg=232
+hi StatusLine ctermfg=254 ctermbg=102
