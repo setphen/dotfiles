@@ -15,15 +15,6 @@ noremap <Leader>a :Ack '
 
 " toggle fullscreen pane
 nnoremap <C-W>z :call MaximizeToggle()<CR>
-"for another time...
-" function! ToggleQuickFix()
-"   if "Quickfix" in buffers()
-"     :ccl
-"   else
-"     :cope
-"   endif
-" endfunction
-noremap <Leader>p Buf<CR>
 
 function! MaximizeToggle()
   if exists("s:maximize_session")
@@ -63,7 +54,5 @@ nnoremap <Leader><space> :QFix<CR>
 " use system clipboard (for yank, etc)
 set clipboard=unnamed
 
-"colorscheme!
-colo minimalist
-hi ColorColumn ctermbg=232
-hi StatusLine ctermfg=254 ctermbg=102
+"change column highlight color
+hi ColorColumn ctermbg=0

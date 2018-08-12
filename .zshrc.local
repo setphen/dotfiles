@@ -17,7 +17,7 @@ precmd () {print -Pn "\e]2; %~/ \a"}
 preexec () {print -Pn "\e]2; %~/ \a"}
 
 #colors :)
-export TERM="xterm-256color" 
+export TERM="xterm-16color"
 
 # no globbing
 # unsetopt nomatch
@@ -30,3 +30,6 @@ alias trash="rmtrash"
 
 # get those sweet completions?
 autoload -Uz compinit && compinit
+
+# direnv
+eval "$(direnv hook zsh)"
