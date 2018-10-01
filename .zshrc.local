@@ -28,6 +28,11 @@ export TERM="xterm-16color"
 # productivity
 alias todo="vim ~/.todo"
 
+# writing
+journal() {
+  vim "~Dropbox\ \(Personal\)/3\ Journal/$1.md"
+}
+
 # safety
 alias trash="rmtrash"
 
@@ -36,3 +41,4 @@ autoload -Uz compinit && compinit
 
 # direnv
 eval "$(direnv hook zsh)"
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
