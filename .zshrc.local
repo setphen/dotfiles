@@ -33,6 +33,11 @@ journal() {
   vim "~Dropbox\ \(Personal\)/3\ Journal/$1.md"
 }
 
+# serving folder
+serve() {
+  (sleep 1 && open http://localhost:8181) & python3 -m http.server 8181
+}
+
 # safety
 alias trash="rmtrash"
 
