@@ -9,8 +9,11 @@ export POSTGRES_USER=setphen
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
-. /Users/setphen/.asdf/asdf.sh
+. /Users/setfen/.asdf/asdf.sh
 #. /Users/setphen/.asdf/completions/asdf.bash
+
+#python virtual environments
+source /usr/local/bin/virtualenvwrapper.sh
 
 #Open new tabs in current working directory
 precmd () {print -Pn "\e]2; %~/ \a"}
