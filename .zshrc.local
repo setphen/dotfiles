@@ -35,7 +35,20 @@ journal() {
 
 # serving folder
 serve() {
-  (sleep 1 && open http://localhost:8181) & python3 -m http.server 8181
+  if [[ $# -gt 0 ]]; then
+    (sleep 1 && open http://localhost:$1) & python3 -m http.server $1
+  else
+    (sleep 1 && open http://localhost:8181) & python3 -m http.server 8181
+  fi
+}
+
+ech() {
+  if ( "$1" != "" )
+  then
+    echo "$1"
+  else
+    echo "DEFAULT"
+  fi
 }
 
 # safety
