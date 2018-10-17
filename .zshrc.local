@@ -29,8 +29,9 @@ export TERM="xterm-16color"
 alias todo="vim ~/.todo"
 
 # writing
+JOURNAL_PATH="$HOME/Dropbox (Personal)/3 Journal"
 journal() {
-  vim "~Dropbox\ \(Personal\)/3\ Journal/$1.md"
+  vim "$JOURNAL_PATH/$1.md"
 }
 
 # serving folder
