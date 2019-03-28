@@ -1,6 +1,9 @@
 " keep buffers open in bg
 set hidden
 
+" relative numbering
+set relativenumber
+
 " modify keybindings
 let mapleader = ","
 
@@ -17,6 +20,13 @@ noremap <C-p> :Files<CR>
 
 " project-wide search
 noremap <Leader>a :Ack '
+
+" Test mappings
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 
 " toggle fullscreen pane
 nnoremap <C-W>z :call MaximizeToggle()<CR>

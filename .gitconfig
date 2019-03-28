@@ -29,3 +29,7 @@
 [user]
   name = Stephen Lindberg
   email = stwelin@gmail.com
+[rerere]
+	enabled = 1
+[help]
+	autocorrect = 1
