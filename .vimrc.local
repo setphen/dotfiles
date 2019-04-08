@@ -17,6 +17,7 @@ nnoremap <Leader><Leader> <C-^>
 
 " fuzzy finding
 noremap <C-p> :Files<CR>
+noremap <Leader><C-p> :Buf<CR>
 
 " project-wide search
 noremap <Leader>a :Ack '
@@ -71,7 +72,7 @@ set clipboard=unnamed
 
 "change column highlight color
 hi ColorColumn ctermbg=0
-hi Visual ctermbg=0
+hi Visual ctermbg=8
 
 " tidalvim
 let g:tidal_default_config = {"socket_name": "default", "target_pane": "tidal:1.2"}
