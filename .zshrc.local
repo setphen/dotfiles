@@ -7,6 +7,7 @@ export POSTGRES_USER=setphen
 
 # superfast search, thanks ripgrep!
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
 . /Users/setfen/.asdf/asdf.sh
@@ -61,3 +62,6 @@ autoload -Uz compinit && compinit
 # direnv
 eval "$(direnv hook zsh)"
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
+# space ignore history
+export HISTCONTROL=ignorespace
