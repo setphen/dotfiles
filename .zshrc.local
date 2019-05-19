@@ -2,6 +2,7 @@
 # setopt PROMPT_SUBST ; PS1='%{$fg[green]%}%n%{$reset_color%}:%c%{$fg[blue]%}$(__git_ps1 " (%s)")%{$reset_color%}\$ '
 
 export PATH="$HOME/.bin:$PATH"
+export PATH="/opt/local/bin:$PATH"
 
 export POSTGRES_USER=setphen
 
