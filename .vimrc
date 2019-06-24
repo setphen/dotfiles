@@ -45,16 +45,17 @@ hi Visual ctermbg=8
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
+Plug '/usr/local/opt/fzf'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'derekprior/vim-trimmer'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
+Plug 'junegunn/fzf.vim'
+Plug 'sophacles/vim-processing'
 Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'derekprior/vim-trimmer'
-Plug 'sophacles/vim-processing'
-Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
