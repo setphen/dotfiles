@@ -4,10 +4,12 @@ syntax on
 filetype indent on
 
 set backspace=2   " Backspace deletes like most programs in insert mode
+set clipboard=unnamed
 set cursorline
 set expandtab
 set hidden
 set history=50
+set incsearch
 set laststatus=2  " Always display the status line
 set list listchars=tab:»·,trail:·,nbsp:·
 set number
@@ -51,6 +53,7 @@ Plug 'derekprior/vim-trimmer'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
 Plug 'sophacles/vim-processing'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
