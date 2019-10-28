@@ -12,6 +12,7 @@ set history=50
 set incsearch
 set laststatus=2  " Always display the status line
 set list listchars=tab:»·,trail:·,nbsp:·
+set noswapfile
 set number
 set numberwidth=5
 set ruler         " show the cursor position all the time
@@ -34,6 +35,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 noremap <Leader>w :update<CR>
 
+"test shortcuts
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
 "fzf
 noremap <C-p> :Files<CR>
 noremap <Leader><C-p> :Buf<CR>
@@ -42,6 +50,7 @@ noremap <Leader><C-p> :Buf<CR>
 hi ColorColumn ctermbg=0
 hi ColorColumn ctermbg=8
 hi Visual ctermbg=8
+hi htmlBold ctermbg=8
 
 "Plugins
 call plug#begin('~/.vim/bundle')
@@ -55,10 +64,12 @@ Plug 'fatih/vim-go'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'sophacles/vim-processing'
+Plug 'tidalcycles/vim-tidal'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'janko-m/vim-test'
 
 call plug#end()
 
@@ -78,3 +89,5 @@ if executable('ag')
     nnoremap \ :Ag -Q '
   endif
 endif
+
+let g:tidal_default_config = {"socket_name": "default", "target_pane": "tidal:1.2"}
