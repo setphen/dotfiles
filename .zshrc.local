@@ -1,58 +1,14 @@
-# autoload -U colors && colors
-# setopt PROMPT_SUBST ; PS1='%{$fg[green]%}%n%{$reset_color%}:%c%{$fg[blue]%}$(__git_ps1 " (%s)")%{$reset_color%}\$ '
-
 export PATH="$HOME/.bin:$PATH"
 export PATH="/opt/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 export POSTGRES_USER=setphen
 
 # superfast search, thanks ripgrep!
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
-# recommended by brew doctor
-export PATH="/usr/local/bin:$PATH"
-. /Users/setfen/.asdf/asdf.sh
-#. /Users/setphen/.asdf/completions/asdf.bash
-
-#python virtual environments
-source /usr/local/bin/virtualenvwrapper.sh
-
-#Open new tabs in current working directory
-precmd () {print -Pn "\e]2; %~/ \a"}
-preexec () {print -Pn "\e]2; %~/ \a"}
-
-#colors :)
-export TERM="xterm-16color"
-
-# no globbing
-# unsetopt nomatch
-
-# productivity
-alias todo="vim ~/.todo"
-
-# writing
-JOURNAL_PATH="$HOME/Dropbox (Personal)/3 Journal"
-journal() {
-  vim "$JOURNAL_PATH/$1.md"
-}
-
-# serving folder
-serve() {
-  if [[ $# -gt 0 ]]; then
-    (sleep 1 && open http://localhost:$1) & python3 -m http.server $1
-  else
-    (sleep 1 && open http://localhost:8181) & python3 -m http.server 8181
-  fi
-}
-
-ech() {
-  if ( "$1" != "" )
-  then
-    echo "$1"
-  else
-    echo "DEFAULT"
-  fi
-}
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 # safety
 alias trash="rmtrash"
@@ -60,9 +16,4 @@ alias trash="rmtrash"
 # get those sweet completions?
 autoload -Uz compinit && compinit
 
-# direnv
-eval "$(direnv hook zsh)"
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-
-# space ignore history
-export HISTCONTROL=ignorespace
