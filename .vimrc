@@ -1,6 +1,6 @@
+syntax on
 let mapleader = ","
 
-syntax on
 filetype indent on
 
 set backspace=2   " Backspace deletes like most programs in insert mode
@@ -29,6 +29,7 @@ let g:pyindent_searchpair_timeout = 10
 inoremap <Nul> <C-n>
 map! <C-q> <ESC>
 nnoremap <Leader><Leader> <C-^>
+nnoremap <Leader>. :bnext<CR>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -46,31 +47,40 @@ nmap <silent> t<C-g> :TestVisit<CR>
 noremap <C-p> :Files<CR>
 noremap <Leader><C-p> :Buf<CR>
 
-"change column highlight color
-hi ColorColumn ctermbg=0
+" Colors
 hi ColorColumn ctermbg=8
 hi Visual ctermbg=8
 hi htmlBold ctermbg=8
+hi LineNr ctermfg=8
 
 "Plugins
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
 Plug 'elixir-lang/vim-elixir'
+Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go'
-Plug 'junegunn/fzf.vim'
+Plug 'janko-m/vim-test'
 Plug 'mattn/emmet-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'evanleck/vim-svelte'
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 Plug 'sophacles/vim-processing'
 Plug 'tidalcycles/vim-tidal'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'janko-m/vim-test'
-
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -89,5 +99,7 @@ if executable('ag')
     nnoremap \ :Ag -Q '
   endif
 endif
+
+noremap <leader>a :Ag -Q <C-R><C-W><CR>
 
 let g:tidal_default_config = {"socket_name": "default", "target_pane": "tidal:1.2"}

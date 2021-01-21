@@ -30,11 +30,11 @@
   name = Stephen Lindberg
   email = stwelin@gmail.com
 [rerere]
-	enabled = 1
+  enabled = 1
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
