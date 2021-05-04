@@ -63,11 +63,15 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
+Plug 'eslint/eslint'
 Plug 'fatih/vim-go'
 Plug 'janko-m/vim-test'
 Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'evanleck/vim-svelte'
+Plug 'isruslan/vim-es6'
+Plug 'etdev/vim-hexcolor'
+Plug 'w0rp/ale'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -103,3 +107,15 @@ endif
 noremap <leader>a :Ag -Q <C-R><C-W><CR>
 
 let g:tidal_default_config = {"socket_name": "default", "target_pane": "tidal:1.2"}
+
+" ALE colors
+highlight ALEWarning ctermbg=8
+highlight ALEError ctermbg=8
+
+"
+let g:ale_linters_explicit = 1
+
+let g:ale_linters =  {
+  \   'javascript': ['eslint'],
+  \}
+
