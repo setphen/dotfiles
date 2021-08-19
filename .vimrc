@@ -52,6 +52,7 @@ hi ColorColumn ctermbg=8
 hi Visual ctermbg=8
 hi htmlBold ctermbg=8
 hi LineNr ctermfg=8
+hi SpecialKey ctermfg=8
 
 "Plugins
 call plug#begin('~/.vim/bundle')
@@ -71,6 +72,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'evanleck/vim-svelte'
 Plug 'isruslan/vim-es6'
 Plug 'etdev/vim-hexcolor'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
@@ -119,3 +121,4 @@ let g:ale_linters =  {
   \   'javascript': ['eslint'],
   \}
 
+colorscheme monokai

@@ -8,16 +8,16 @@ export POSTGRES_USER=setphen
 # superfast search, thanks ripgrep!
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
-source /Users/setphen/.ghcup/env
+# source /Users/setphen/.ghcup/env
 
 #Open new tabs in current working directory
 precmd () {print -Pn "\e]2; %~/ \a"}
 preexec () {print -Pn "\e]2; %~/ \a"}
 
 #colors :)
-export TERM="xterm-16color"
+export TERM="xterm-256color"
 
 # no globbing
 # unsetopt nomatch
@@ -55,12 +55,38 @@ alias trash="rmtrash"
 # get those sweet completions?
 autoload -Uz compinit && compinit
 
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+# export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 # #chruby
-source /usr/local/share/chruby/chruby.sh
-export PATH="/usr/local/opt/mozjpeg/bin:$PATH"
-export PATH="$PATH:/Users/setphen/.dat/releases/dat-13.13.1-macos-x64"
+# source /usr/local/share/chruby/chruby.sh
+# export PATH="/usr/local/opt/mozjpeg/bin:$PATH"
+# export PATH="$PATH:/Users/setphen/.dat/releases/dat-13.13.1-macos-x64"
 
 #Blog deployment
 export BLOG_DEPLOY_PATH=stephen@phse.net:public_www/blog
+
+#Postgres path stuff
+export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/stephenlindberg/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/stephenlindberg/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/stephenlindberg/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/stephenlindberg/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# OpenJDK stuff?
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# go stuff
+export PATH="/usr/local/go/bin:$PATH"
+
+# make stuff
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
