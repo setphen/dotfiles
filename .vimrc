@@ -23,6 +23,7 @@ set splitbelow
 set splitright
 set tabstop=2
 set textwidth=80
+set re=2          " regex engine
 
 let g:pyindent_searchpair_timeout = 10
 
@@ -120,5 +121,3 @@ let g:ale_linters_explicit = 1
 let g:ale_linters =  {
   \   'javascript': ['eslint'],
   \}
-
-colorscheme monokai
