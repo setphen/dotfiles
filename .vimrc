@@ -59,6 +59,7 @@ hi SpecialKey ctermfg=8
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -121,3 +122,12 @@ let g:ale_linters_explicit = 1
 let g:ale_linters =  {
   \   'javascript': ['eslint'],
   \}
+
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+syntax on
+set termguicolors
+colorscheme embark
