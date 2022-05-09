@@ -58,10 +58,10 @@ hi LineNr ctermfg=8
 hi SpecialKey ctermfg=8
 
 "Plugins
-call plug#begin('~/.config/nvim')
+call plug#begin('~/.config/nvim/bundle')
 
 " Define bundles via Github repos
-Plug 'NLKNguyen/papercolor-theme', { 'as': 'papercolor', 'branch': 'master' }
+Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -125,4 +125,8 @@ let g:ale_linters =  {
   \   'javascript': ['eslint'],
   \}
 
-colorscheme papercolor
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
