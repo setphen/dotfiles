@@ -26,6 +26,7 @@ set splitright
 set tabstop=2
 set textwidth=80
 set re=2          " regex engine
+set nohlsearch
 
 let g:pyindent_searchpair_timeout = 10
 
